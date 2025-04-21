@@ -2,7 +2,7 @@
 
 A first Three.js project using JavaScript and Vite. This beginner project covers basic 3D scene setup with modern web tooling.
 
-**Live Demo:** [View project](https://threejs-js-basic-project-1-cubes.vercel.app/)
+**Live Demo:** [View project](https://basic-cubes.vercel.app/)
 
 ## Features
 - Basic Three.js scene setup
