@@ -47,6 +47,11 @@ group.add(cube1)
 group.add(cube2)
 group.add(cube3)
 
+// ----- Setup Lights ---------------------------------
+const light = new THREE.DirectionalLight(0xffffff, 1);
+light.position.set(5, 10, 7.5);
+scene.add(light);
+
 // ----- Setup Camera -------------------------------
 const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight)
 // const aspectRatio = window.innerWidth / window.innerHeight
