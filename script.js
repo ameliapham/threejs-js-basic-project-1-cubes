@@ -28,9 +28,14 @@ geometry1.setAttribute('position', positionsAttribute)
 const cube1 = new THREE.Mesh(geometry1, material2)
 
 // Other Box Geometry
+const texture = new THREE.TextureLoader().load('textures/basecolor.jpg')
 const cube2 = new THREE.Mesh(
     new THREE.BoxGeometry(1,1,1),
-    new THREE.MeshBasicMaterial({color: 'red'})
+    new THREE.MeshStandardMaterial({
+        map: texture,
+        roughness: 0.4,
+        metalness: 0.1
+    })
 )
 cube2.position.set(2,0,0)
 
