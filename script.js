@@ -28,10 +28,14 @@ geometry1.setAttribute('position', positionsAttribute)
 const cube1 = new THREE.Mesh(geometry1, material2)
 
 // Other Box Geometry
+
+//const texture = new THREE.Texture(image)
+//texture.colorSpace = THREE.SRGBColorSpace
+
 const texture = new THREE.TextureLoader().load('textures/basecolor.jpg')
 const cube2 = new THREE.Mesh(
     new THREE.BoxGeometry(1,1,1),
-    new THREE.MeshStandardMaterial({
+    new THREE.MeshBasicMaterial({
         map: texture,
         roughness: 0.4,
         metalness: 0.1
@@ -53,9 +57,9 @@ group.add(cube2)
 group.add(cube3)
 
 // ----- Setup Lights ---------------------------------
-const light = new THREE.DirectionalLight(0xffffff, 1);
-light.position.set(5, 10, 7.5);
-scene.add(light);
+//const light = new THREE.DirectionalLight(0xffffff, 1);
+//light.position.set(5, 10, 7.5);
+//scene.add(light);
 
 // ----- Setup Camera -------------------------------
 const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight)
