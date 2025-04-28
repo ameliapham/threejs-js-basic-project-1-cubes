@@ -37,19 +37,16 @@ const cube2 = new THREE.Mesh(
     new THREE.BoxGeometry(1,1,1),
     new THREE.MeshBasicMaterial({
         map: texture,
-        roughness: 0.4,
-        metalness: 0.1
     })
 )
 cube2.position.set(2,0,0)
 
 const cube3 = new THREE.Mesh(
     new THREE.BoxGeometry(1,1,1),
-    new THREE.MeshPhysicalMaterial({
-        transmission: 1,
-        roughness: 0.1,
-        thickness: 0.5,
-        transparent: true,
+    new THREE.MeshStandardMaterial({
+        color: 0xaaaaaa,
+        roughness: 0.2,
+        metalness: 1,
     })
 )
 cube3.position.set(-3,0,0)
