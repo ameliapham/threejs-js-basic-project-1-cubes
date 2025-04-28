@@ -45,7 +45,12 @@ cube2.position.set(2,0,0)
 
 const cube3 = new THREE.Mesh(
     new THREE.BoxGeometry(1,1,1),
-    new THREE.MeshBasicMaterial({color: 'orange'})
+    new THREE.MeshPhysicalMaterial({
+        transmission: 1,
+        roughness: 0.1,
+        thickness: 0.5,
+        transparent: true,
+    })
 )
 cube3.position.set(-3,0,0)
 
@@ -57,9 +62,13 @@ group.add(cube2)
 group.add(cube3)
 
 // ----- Setup Lights ---------------------------------
-//const light = new THREE.DirectionalLight(0xffffff, 1);
-//light.position.set(5, 10, 7.5);
-//scene.add(light);
+const light = new THREE.DirectionalLight(0xffffff, 1);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+light.position.set(2, 2, 2);
+light.intensity = 2
+
+scene.add(ambientLight);
+scene.add(light);
 
 // ----- Setup Camera -------------------------------
 const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight)
@@ -75,6 +84,8 @@ const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
 // controls.target.y = 0
 // controls.update()
+controls.target.copy(cube3.position)
+controls.update()
 
 /* Cursor
 const cursor = {
@@ -117,11 +128,11 @@ const animate = () => {
     const elapsedTime = clock.getElapsedTime()
     
     // Update Object
-    cube3.position.y = Math.sin(elapsedTime) * 2
+    //cube3.position.y = Math.sin(elapsedTime) * 2
         // gsap.to(cube3.position, {duration : Math.cos(elapsedTime), delay: Math.cos(elapsedTime), x: 2})
 
-    cube2.position.x = Math.cos(elapsedTime) * 2
-    cube2.position.y = Math.sin(elapsedTime) * 2
+    //cube2.position.x = Math.cos(elapsedTime) * 2
+    //cube2.position.y = Math.sin(elapsedTime) * 2
 
     // cube1.rotation.y = elapsedTime
 
