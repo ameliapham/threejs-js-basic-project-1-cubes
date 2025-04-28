@@ -61,7 +61,7 @@ group.add(cube3)
 // ----- Setup Lights ---------------------------------
 const light = new THREE.DirectionalLight(0xffffff, 1);
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-light.position.set(2, 2, 2);
+light.position.set(2, 2, -2);
 light.intensity = 2
 
 scene.add(ambientLight);
